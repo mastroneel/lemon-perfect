@@ -18,6 +18,7 @@ $grey: #b4bbc3;
 }
 
 body {
+  transition: 0.5s;
   background: $white;
   font-family: "LL Circular", "Arial", "Helvetica", sans-serif;
   margin: 0;
@@ -35,6 +36,9 @@ body {
   }
   img {
     max-width: 100%;
+  }
+  .center {
+    text-align: center;
   }
   .wrapper {
     max-width: 1000px;
@@ -76,6 +80,63 @@ body {
   }
 }
 
+// Mobile nav
+.nav-mobile {
+  .visible-nav {
+    position: absolute;
+    width: 100vw;
+    .logo {
+      width: 101px;
+    }
+    .cart-button {
+      float: right;
+      img {
+        width: 24px;
+        height: 23px;
+      }
+    }
+  }
+  .slide-menu {
+    width: 300px;
+    height: 101vh;
+    left: -300px;
+    z-index: 1000;
+    position: fixed;
+    background: $yellow;
+    color: $navy;
+    transition: 0.5s;
+    .open-button, .close-button {
+      cursor: pointer;
+    }
+    .open-button {
+      transition: 0.5s;
+    }
+    .close-button {
+      float: right;
+    }
+    ul {
+      list-style: none;
+      li {
+        a {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  .menu-open {
+    left: 0;
+  }
+}
+
+.page-open {
+  margin-left: 300px;
+  transition: 0.5s;
+  .page-container {
+    width: 100vw;
+    overflow: hidden !important;
+  }
+}
+
 //Desktop nav
 .nav-desktop {
   width: 100vw;
@@ -99,6 +160,7 @@ body {
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
         position: relative;
+        float: right;
   top: 50%;
   transform: translateY(-50%);
         li {
@@ -170,20 +232,6 @@ body {
     max-width: 1000px;
     display: block;
     margin: 0 auto;
-  }
-  .white-bg {
-    background: $white;
-    width: 100vw;
-    position: absolute;
-    left: 16px;
-    padding: 0 20px;
-    margin-top: 200px;
-    img {
-      max-width: 100%;
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-    }
   }
   h3 {
     text-transform: uppercase;
@@ -274,6 +322,42 @@ body {
     width: 128px;
     margin: 0 9px 18px 9px;
   }
+  .our-lemons-row {
+    padding-bottom: 96px;
+  }
+  .product-row, .process-row {
+    padding: 96px 0;
+  }
+  .process-row {
+    img {
+      position: absolute;
+      right: 0;
+      max-width: 95%;
+    }
+  }
+}
+
+// Seal section styles
+.white-bg {
+  background: $white;
+  padding: 0 20px;
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  h5 {
+    color: $navy;
+    font-weight: 500;
+    font-size: 20px;
+  }
+  img {
+    width: 100%;
+    max-width: 417px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
 
@@ -281,26 +365,46 @@ body {
 footer {
   background-color: $yellow;
   color: $navy;
-  padding: 300px 20px 80px 20px;
+  padding: 220px 20px 80px 20px;
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
   h3 {
     font-weight: 500;
     font-size: 28px;
+    margin-bottom: 10px;
   }
   p {
     font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 20px;
   }
   ul {
     list-style-type: none;
     padding: 0;
     a {
+      color: $navy;
+      font-size: 18px;
       &:hover {
         color: $turquoise;
       }
     }
+    li+li {
+      margin-top: 19px;
+    }
     li {
       ul {
+        margin: 30px 0;
         li {
           display: inline-flex;
+          &:first-child {
+            margin-right: 13px;
+          }
+        }
+        li+li {
+          margin: 0 13px;
         }
       }
     }
@@ -325,6 +429,9 @@ footer {
         font-family: "LL Circular", "Arial", "Helvetica", sans-serif;
       }
     }
+    .button {
+      margin-top: 30px;
+    }
   }
   span {
     font-weight: 400;
@@ -338,10 +445,27 @@ footer {
 
 
 //Media queries
+
+@media only screen and (max-width: 913px) {
+  .hero {
+    h1 {
+      text-align: left;
+      padding-left: 20px;
+      line-height: 0.90;
+      &:after {
+        top: 30px;
+      }
+    }
+  }
+}
+
 @media only screen and (min-width: 768px) {
   body {
     .hidden-sm {
       display: block;
+    }
+    .nav-mobile {
+      display: none;
     }
     .hero {
       min-height: 90vh;
@@ -382,6 +506,11 @@ footer {
         transform: translateY(-125px);
       }
     }
+    .process-row {
+      img {
+        max-width: 45%;
+      }
+    }
   }
   footer {
     h3 {
@@ -389,6 +518,18 @@ footer {
     }
     p {
       font-size: 18px;
+    }
+    ul {
+      li {
+        a {
+            font-size: 20px;
+        }
+      }
+    }
+  }
+  .white-bg {
+    h5 {
+      font-size: 24px;
     }
   }
 }
@@ -400,6 +541,16 @@ footer {
     }
     .hidden-lg {
       display: block;
+    }
+    .nav-desktop {
+      display: none;
+    }
+    .hero {
+      min-height: 60vh;
+      h1 {
+        text-align: center;
+        margin-top: 25%;
+      }
     }
   }
 }

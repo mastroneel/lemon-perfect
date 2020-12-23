@@ -1,3 +1,19 @@
+$(".open-button").click(function() {
+  $(".slide-menu").addClass('menu-open');
+  $("body").addClass('page-open');
+});
+
+$(".close-button").click(function() {
+  $(".slide-menu").removeClass('menu-open');
+  $("body").removeClass('page-open');
+});
+
+
+
+
+
+
+
 // // Hero fade to yellow on scroll
 //
 // $(function(){
