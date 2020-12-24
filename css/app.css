@@ -72,8 +72,7 @@ body {
     margin-right: 20px;
     padding: 10px 0; }
     .nav-mobile .visible-nav .cart-button img {
-      width: 24px;
-      height: 23px; }
+      width: 24px; }
 .nav-mobile .slide-menu {
   width: 300px;
   height: 101vh;
@@ -301,7 +300,7 @@ body {
 footer {
   background-color: #FCE200;
   color: #003DA6;
-  padding: 220px 20px 80px 20px; }
+  padding: 80px 20px 80px 20px; }
   footer .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -374,6 +373,8 @@ footer {
     body .hero .inner {
       padding: 140px 0;
       margin-top: 71px; }
+      body .hero .inner .hidden-sm {
+        display: none; }
       body .hero .inner h1 {
         font-size: 96px;
         margin: 79px 0; }
@@ -395,7 +396,7 @@ footer {
     .content .img-in-circle .img-in-circle-inner {
       max-width: 463px;
       max-height: 463px;
-      transform: translateY(-125px); }
+      transform: translateY(-55px); }
       .content .img-in-circle .img-in-circle-inner img {
         bottom: -88px; }
     .content .process-row img {
@@ -420,6 +421,8 @@ footer {
     margin-bottom: 5px; }
   body .content .circle-row {
     max-width: 440px; }
+    body .content .circle-row .col-xs-4 {
+      padding: 0; }
   body .content .process-row {
     padding-top: 0;
     margin-top: -45px; }
@@ -430,6 +433,7 @@ footer {
   body .content .product-row {
     padding-top: 14px; }
     body .content .product-row img {
+      width: 100%;
       max-width: 550px;
       display: block;
       margin: 0 auto; }
@@ -454,9 +458,29 @@ footer {
       margin-top: -7px; }
 
   footer {
-    padding: 10px 0 80px 0; } }
+    padding: 10px 0 80px 0; }
+    footer .footer-links {
+      margin-top: 46px; } }
 @media only screen and (max-width: 536px) {
-  .hero {
-    text-align: left; } }
+  body .container {
+    padding: 0 42px; }
+  body .hero {
+    text-align: left;
+    min-height: 430px; }
+    body .hero h1 {
+      text-align: left;
+      padding-left: 32px;
+      margin-top: 178px; }
+    body .hero .hidden-xs {
+      display: none; }
+    body .hero .hidden-sm {
+      display: block; }
+  body .circle-row .white-circle {
+    width: 28vw;
+    height: 28vw;
+    max-width: 134px;
+    max-height: 134px; }
+    body .circle-row .white-circle span {
+      font-size: 13px; } }
 
 /*# sourceMappingURL=app.css.map */

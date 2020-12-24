@@ -103,7 +103,6 @@ body {
       padding: 10px 0;
       img {
         width: 24px;
-        height: 23px;
       }
     }
   }
@@ -409,7 +408,7 @@ body {
 footer {
   background-color: $yellow;
   color: $navy;
-  padding: 220px 20px 80px 20px;
+  padding: 80px 20px 80px 20px;
   .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -516,6 +515,9 @@ footer {
       .inner {
         padding: 140px 0;
         margin-top: 71px;
+        .hidden-sm {
+          display: none;
+        }
         h1 {
           font-size: 96px;
           margin: 79px 0;
@@ -547,7 +549,7 @@ footer {
       .img-in-circle-inner {
         max-width: 463px;
         max-height: 463px;
-        transform: translateY(-125px);
+        transform: translateY(-55px);
         img {
           bottom: -88px;
         }
@@ -596,6 +598,9 @@ footer {
       }
       .circle-row {
         max-width: 440px;
+        .col-xs-4 {
+          padding: 0;
+        }
       }
       .process-row {
         padding-top: 0;
@@ -609,6 +614,7 @@ footer {
       .product-row {
         padding-top: 14px;
         img {
+          width: 100%;
           max-width: 550px;
           display: block;
           margin: 0 auto;
@@ -644,11 +650,42 @@ footer {
   }
   footer {
     padding: 10px 0 80px 0;
+    .footer-links {
+      margin-top: 46px;
+    }
   }
 }
 
 @media only screen and (max-width: 536px) {
-  .hero {
-    text-align: left;
+  body {
+    .container {
+      padding: 0 42px;
+    }
+    .hero {
+      text-align: left;
+      min-height: 430px;
+      h1 {
+        text-align: left;
+        padding-left: 32px;
+        margin-top: 178px;
+      }
+      .hidden-xs {
+        display: none;
+      }
+      .hidden-sm {
+        display: block;
+      }
+    }
+    .circle-row {
+      .white-circle {
+        width: 28vw;
+        height: 28vw;
+        max-width: 134px;
+        max-height: 134px;
+        span {
+          font-size: 13px;
+        }
+      }
+    }
   }
 }
