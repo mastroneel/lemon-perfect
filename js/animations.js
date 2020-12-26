@@ -12,12 +12,60 @@ $(".close-button").click(function() {
 
 
 
+// image in circle fixed on scroll, then fade out
 
 
 
 
+$(window).scroll(function() {
 
 
+  var scroll = $(window).scrollTop();
+
+  if($(window).innerWidth() >= 768) {
+
+    if (scroll <= window.innerHeight) {
+        $(".img-in-circle").removeClass('fixed-circle');
+    }
+    if (scroll >= window.innerHeight) {
+        $(".img-in-circle").addClass('fixed-circle');
+    }
+    if (scroll <= 1391) {
+        $(".img-in-circle-inner").removeClass('fade-out');
+        // $(".hand-squeezing-lemon").css('opacity', 0);
+        $(".hand-squeezing-lemon").addClass('fade-out');
+    }
+    if (scroll >= 1391) {
+        $(".img-in-circle-inner").addClass('fade-out');
+        // $(".hand-squeezing-lemon").css('opacity', 1);
+        $(".hand-squeezing-lemon").removeClass('fade-out');
+    }
+    if (scroll >= 1391) {
+        $(".img-in-circle-inner").addClass('fade-out');
+    }
+
+  }
+
+});
+
+
+
+
+// yellow fade
+// $(window).scroll(function(){
+//     $(".yellow-overlay").css("opacity", 1 - $(window).scrollTop() / 550);
+//   });
+
+  $(window).scroll(function() {
+    var d = $('.yellow-overlay'),
+        offsetT = d.offset().top + d.outerHeight(),
+        scrollT = $(document).scrollTop(),
+        y1 = 0, y2 = 1,
+        x1 = 0, x2 = offsetT,
+        m = (y2-y1)/(x2-x1);
+
+    d.css('opacity', Math.max(0,y1 + m * scrollT));
+  });
 
 
 /*Interactivity to determine when an animated element in in view. In view elements trigger our animation*/
@@ -61,6 +109,16 @@ $(window).on('scroll resize', function() {
 $(window).trigger('scroll');
 
 });
+
+
+
+
+
+
+
+
+
+
 
 
 
