@@ -397,12 +397,12 @@ footer {
     letter-spacing: 0;
     line-height: 1.6; }
 
-@media only screen and (min-width: 768px) and (max-width: 1034px) {
+@media only screen and (max-width: 1034px) {
   .page-container {
-    width: 102vw; }
-
-  .content .process-row .hand-squeezing-lemon {
-    right: -2vw; } }
+    width: 102vw; } }
+@media only screen and (max-width: 700px) {
+  .page-container {
+    width: 104vw; } }
 @media (max-width: 1034px) {
   footer ul li ul li + li {
     margin: 0 5px; } }
